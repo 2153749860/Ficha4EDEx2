@@ -41,7 +41,15 @@ public class CircularArrayQueue<T> implements QueueADT<T>{
 
     @Override
     public T dequeue() throws EmptyCollectionException2 {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(this.isEmpty()){
+            throw new EmptyCollectionException2("Lista Vazia");
+        } else{
+            T current = this.queue[this.front];
+            this.queue[this.front] = null;
+            this.front = (this.front + 1) % this.queue.length;
+            this.count--;
+            return current;
+        }
     }
 
     @Override
@@ -51,7 +59,11 @@ public class CircularArrayQueue<T> implements QueueADT<T>{
 
     @Override
     public boolean isEmpty() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(this.count == 0){
+            return true;
+        } else{
+            return false;
+        }
     }
 
     @Override
