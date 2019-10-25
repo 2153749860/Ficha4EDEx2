@@ -54,7 +54,11 @@ public class CircularArrayQueue<T> implements QueueADT<T>{
 
     @Override
     public T first() throws EmptyCollectionException2 {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(this.isEmpty()){
+            throw new EmptyCollectionException2("Lista Vazia!");
+        } else{
+            return this.queue[this.front];
+        }
     }
 
     @Override

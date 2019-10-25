@@ -21,7 +21,7 @@ public class Ficha4Ex2 {
         // TODO code application logic here
         CircularArrayQueue lista = new CircularArrayQueue();
 
-        int numeroTeste = 3;
+        int numeroTeste = 7;
 
         switch (numeroTeste) {
             case 0: //teste adicionar 1 elemento
@@ -58,6 +58,39 @@ public class Ficha4Ex2 {
                     Logger.getLogger(Ficha4Ex2.class.getName()).log(Level.SEVERE, null, ex);
                 }
                 System.out.println(lista.toString());
+                break;
+                
+            case 4:
+                try {
+                    //teste retornar primeiro elemento da lista com elementos
+                    lista.enqueue(1);
+                    lista.enqueue(2);
+                    lista.enqueue(3);
+                    System.out.println(lista.first());
+                } catch (EmptyCollectionException2 ex) {
+                    Logger.getLogger(Ficha4Ex2.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                break;
+                
+            case 5:
+                //teste retornar primeiro elemento da lista vazia
+                try {
+                    System.out.println(lista.first());
+                } catch (EmptyCollectionException2 ex) {
+                    Logger.getLogger(Ficha4Ex2.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                break;
+            case 6:
+                //teste verificar se lista esta vazia
+                System.out.println(lista.isEmpty());
+                break;
+            case 7:
+                //teste verificar se lista esta vazia
+                lista.enqueue(1);
+                lista.enqueue(2);
+                System.out.println(lista.isEmpty());
                 break;
         }
     }
