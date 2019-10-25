@@ -11,7 +11,7 @@ package ficha4ex2;
  */
 public class CircularArrayQueue<T> implements QueueADT<T>{
     
-    private final int DEFAULT_CAPACITY = 10;
+    private final int DEFAULT_CAPACITY = 3;
     private int front;
     private int rear;
     private int count;
@@ -73,13 +73,15 @@ public class CircularArrayQueue<T> implements QueueADT<T>{
 
     @Override
     public String toString() {
+        int t = this.front;
         StringBuilder str = new StringBuilder();
-        str.append("Front: ");str.append(this.queue[this.front]);str.append("|");str.append(this.front);str.append("\n");
-        str.append("Rear: ");str.append(this.queue[this.rear]);str.append("|");str.append(this.rear);str.append("\n");
+        str.append("Front: ");str.append("Conteudo: ");str.append(this.queue[this.front]);str.append("|");str.append("Posição: ");str.append(this.front);str.append("\n");
+        str.append("Rear: ");str.append("Conteudo: ");str.append(this.queue[this.rear]);str.append("|");str.append("Posição: ");str.append(this.rear);str.append("\n");
         str.append("Tamanho: ");str.append(this.size());str.append("\n");
         str.append("Tamanho Stack: ");str.append(this.queue.length);str.append("\n");
-        for(int i=0; i<this.size(); i++){
-            str.append(this.queue[i]);str.append("\n");
+        for(int i=0; i < this.size() ; i++){
+            str.append(this.queue[t]);str.append("\n");
+            t = (t + 1) % this.queue.length;
         }
         return str.toString();
     }

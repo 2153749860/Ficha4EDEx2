@@ -29,6 +29,7 @@ public class Ficha4Ex2 {
                 System.out.println(lista.toString());
                 break;
             case 1:
+                //teste encher lista
                 lista.enqueue(1);
                 lista.enqueue(2);
                 lista.enqueue(3);
@@ -46,13 +47,13 @@ public class Ficha4Ex2 {
                 break;
             case 3:
                 try {
-                    //testar remover lista com elementos
+                    //testar remover elementos da lista
                     lista.enqueue(1);
                     lista.enqueue(2);
                     lista.enqueue(3);
-                    lista.enqueue(4);
-                    lista.enqueue(5);
                     lista.dequeue();
+                    lista.dequeue();
+                    lista.enqueue(4);
                 } catch (EmptyCollectionException2 ex) {
                     Logger.getLogger(Ficha4Ex2.class.getName()).log(Level.SEVERE, null, ex);
                 }
