@@ -21,7 +21,7 @@ public class Ficha4Ex2 {
         // TODO code application logic here
         CircularArrayQueue lista = new CircularArrayQueue();
 
-        int numeroTeste = 7;
+        int numeroTeste = 8;
 
         switch (numeroTeste) {
             case 0: //teste adicionar 1 elemento
@@ -59,7 +59,7 @@ public class Ficha4Ex2 {
                 }
                 System.out.println(lista.toString());
                 break;
-                
+
             case 4:
                 try {
                     //teste retornar primeiro elemento da lista com elementos
@@ -70,9 +70,9 @@ public class Ficha4Ex2 {
                 } catch (EmptyCollectionException2 ex) {
                     Logger.getLogger(Ficha4Ex2.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
+
                 break;
-                
+
             case 5:
                 //teste retornar primeiro elemento da lista vazia
                 try {
@@ -80,7 +80,7 @@ public class Ficha4Ex2 {
                 } catch (EmptyCollectionException2 ex) {
                     Logger.getLogger(Ficha4Ex2.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                
+
                 break;
             case 6:
                 //teste verificar se lista esta vazia
@@ -91,6 +91,35 @@ public class Ficha4Ex2 {
                 lista.enqueue(1);
                 lista.enqueue(2);
                 System.out.println(lista.isEmpty());
+                break;
+            case 8:
+                //test 1 expandCapacity
+                lista.enqueue(1);
+                lista.enqueue(2);
+                lista.enqueue(3);
+                System.out.println(lista.toString());
+                break;
+            case 9:
+                //test 2 expandCapacity
+                lista.enqueue(1);
+                lista.enqueue(2);
+                lista.enqueue(3);
+                lista.enqueue(4);
+                System.out.println(lista.toString());
+                break;
+            case 10:
+                try {
+                    //teste 3 expandCapacity
+                    lista.enqueue(1);
+                    lista.enqueue(2);
+                    lista.enqueue(3);
+                    lista.enqueue(4);
+                    lista.dequeue();
+                    lista.enqueue(1);
+                } catch (EmptyCollectionException2 ex) {
+                    Logger.getLogger(Ficha4Ex2.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                System.out.println(lista.toString());
                 break;
         }
     }
