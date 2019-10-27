@@ -78,13 +78,13 @@ public class CircularArrayQueue<T> implements QueueADT<T> {
     public T dequeue() throws EmptyCollectionException2 {
         if (this.isEmpty()) {
             throw new EmptyCollectionException2("Lista Vazia");
-        } else {
-            T current = this.queue[this.front];
-            this.queue[this.front] = null;
-            this.front = (this.front + 1) % this.queue.length;
-            this.count--;
-            return current;
         }
+        T current = this.queue[this.front];
+        this.queue[this.front] = null;
+        this.front = (this.front + 1) % this.queue.length;
+        this.count--;
+        return current;
+
     }
 
     /**
@@ -113,9 +113,9 @@ public class CircularArrayQueue<T> implements QueueADT<T> {
     public T first() throws EmptyCollectionException2 {
         if (this.isEmpty()) {
             throw new EmptyCollectionException2("Lista Vazia!");
-        } else {
-            return this.queue[this.front];
         }
+        return this.queue[this.front];
+
     }
 
     /**
@@ -127,9 +127,9 @@ public class CircularArrayQueue<T> implements QueueADT<T> {
     public boolean isEmpty() {
         if (this.count == 0) {
             return true;
-        } else {
-            return false;
         }
+        return false;
+
     }
 
     /**
